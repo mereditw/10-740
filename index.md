@@ -1,8 +1,10 @@
 ## Introduction
-Write a brief summary of your project
-Motivation
-Motivate the problem you plan to address
-Why is the problem you are addressing important or interesting?
+
+### Summary
+Our project is to create a connected system of storm drain sensors that will detect changes in water level in order to provide real time flood updates at a more granular level.  In addition to the water level changes we will also include temperature and humidity sensors to provide more context for the water level rise and potentially increase fidelity of the readings
+
+### Motivation
+As flooding becomes a larger problem due to climate change areas that are not usually flooded are now becoming susceptible to flash flooding.  Currently notification systems work at a high level and are not in real time.  With these sensors we can quickly and accurately provide real time information for flood risks at a granular level.
 ## Goals
 What are you going to achieve by the end of the project specifically?
 For Progress Report
