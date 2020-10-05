@@ -1,24 +1,33 @@
 ## Introduction
 
 ### Summary
-Our project is to create a connected system of storm drain sensors that will detect changes in water level in order to provide real time flood updates at a more granular level.  In addition to the water level changes we will also include temperature and humidity sensors to provide more context for the water level rise and potentially increase fidelity of the readings
+Our project is to create a connected system of storm drain sensors that will detect changes in water level in order to provide real time flood updates at a more granular level.  In addition to the water level changes we will also include temperature and humidity sensors to provide more context for the water level rise and potentially increase fidelity of the readings.
 
 ### Motivation
 As flooding becomes a larger problem due to climate change areas that are not usually flooded are now becoming susceptible to flash flooding.  Currently notification systems work at a high level and are not in real time.  With these sensors we can quickly and accurately provide real time information for flood risks at a granular level.
 ## Goals
-What are you going to achieve by the end of the project specifically?
-For Progress Report
+By the end of the project we are hoping to acheive the following:
+  1. Create a working model for our storm drain sensor that accurately detects changing levels of water and gives off an alert
+  2. Connect our sensors to create a system of detection
+  
 ## Current Progress
 
-Currently, our experiment is being conducted remotely with one storm drain setup for each of the two members of our team. The circuit setup is as follows, where the water level sensor and the temperature and humidity sensor are connected to the Raspberry Pi. We have gotten both sensors to successfully collect data will soon implement IOT capabilities by publishing to OpenChirp.
+Currently, our experiment is being conducted remotely with one storm drain setup for each of the two members of our team.
 
-<img src="https://i.gyazo.com/4401253eb3fafcbbb1ed63f1fe160c8b.jpg" alt="Image from Gyazo" width="500"/></a>
+One circuit setup is as follows, where the water level sensor and the temperature and humidity sensor are connected to the Raspberry Pi. We have gotten both sensors to successfully collect data and will soon implement IOT capabilities by publishing to OpenChirp.
+
+<img src="https://i.gyazo.com/4401253eb3fafcbbb1ed63f1fe160c8b.jpg" alt="Image from Gyazo" width="450"/></a>
 
 ### Highlights: In particular, articulate thing(s) you have learned / solved outside of what was taught in class
 ### Problems Encountered
 We are still working on converting the voltage reading from the water level sensor to a water height, because the voltage doesn’t seem to scale linearly with the height of the water as water was added to the container.
 ## Future Plan
-Once the water level sensor’s sampling behavior is more thoroughly tested in settings with waves/ripples, we plan to work on obtaining a rate of flow from the change in water height and size of the container. We also plan to further improve the complexity of our storm drain sensor system.
+In the next two weeks we will complete the following:
+  - Create a methodology for testing our sensor under varying conditions to finalize and adjustments that need to be made to ensure a proper system
+  - utilize that methodology to create and test a working system
+  - connect our sensors to simulate our usecase
+  - Once the water level sensor’s sampling behavior is more thoroughly tested in settings with waves/ripples, obtain a rate of flow from the change in water height and size of the tank
+  - continue to update the github page as progress continues
 ## Methodology
 ### Phenomena of Interest
 #### Water Level
@@ -39,7 +48,7 @@ Temperature and relative humidity are useful measures for indicating the occurre
 Figure 1: Water Level Sensor (source:https://images-na.ssl-images-amazon.com/images/I/61cPAXzZ0EL._AC_SX466_.jpg)
 
 ##### Physical Principles
-The water level sensor is able to detect the height of the water level through changing its resistivity. The sensor is built with 5 power and 5 sensing traces which are connected to each other when submerged in water. The resistance of the sensor is inversely proportional to the height of the water, thus the voltage output by the sensor is proportional to the height of the water.
+The water level sensor is able to detect the height of the water level through changing its resistivity. The sensor is built with five power and five sensing traces which are connected to each other when submerged in water. The resistance of the sensor is inversely proportional to the height of the water, thus the voltage output by the sensor is proportional to the height of the water.
 ##### Sensor Parameters
 This sensor has three pins, an analog voltage output that will be connected to an ADC channel, a VCC pin for power, and a ground connection. The following are parameters of the water level sensor as obtained from the sensor data sheet.
   - Operating voltage between 3.3V – 5V
@@ -68,7 +77,7 @@ The DHT11 sensor has three pins, a digital output data pin, a VCC pin for power,
   - Accuracy: ± 1°C, ±1% RH
   -	Sampling Rate: 1 Hz
 ##### Static and Dynamic Behavior
-The temperature and humidity are relatively static phenomena, and the DHT11 sensor is limited to 1 measurement a second, making it appropriate for this application. 
+The temperature and humidity are relatively static phenomena, and the DHT11 sensor is limited to 1 measurement per second, making it appropriate for this application. 
 
 ### Signal Conditioning and Processing
 Describe the signal conditioning and processing procedures
