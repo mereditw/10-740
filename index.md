@@ -6,16 +6,23 @@ Our project is to create a connected system of storm drain sensors that will det
 ### Motivation
 As flooding becomes a larger problem due to climate change areas that are not usually flooded are now becoming susceptible to flash flooding.  Currently notification systems work at a high level and are not in real time.  With these sensors we can quickly and accurately provide real time information for flood risks at a granular level.
 ## Goals
-What are you going to achieve by the end of the project specifically?
+By the end of the project we are hoping to acheive the following:
+  1. Create a working model for our storm drain sensor that accurately detects changing levels of water and gives off an alert
+  2. Connect our sensors to create a system of detection
+  
+ 
 For Progress Report
 ## Current Progress
-Summarize what you have done so far
+Sp far we have began building out the circuits for our sensor and writing the code for our sensors in order for them to work individually
 ### Highlights: In particular, articulate thing(s) you have learned / solved outside of what was taught in class
 ### Problems Encountered
-Articulate the problems you have encountered
-This section is of the most importance in the progress report. It not only give the TA information on what help you may need, and also encourages you to think deeper about your problems.
+
 ## Future Plan
-Describe what you plan to do in the next two weeks
+In the next two weeks we will complete the following:
+  - Create a methodology for testing our sensor under varying conditions to finalize and adjustments that need to be made to ensure a proper system
+  - utilize that methodology to create and test a working system
+  - connect our sensors to simulate our usecase
+  - continue to update the github page as progress continues
 ## Methodology
 ### Phenomena of Interest
 Describe the physical phenomena of interest, e.g. physical principles, static and dynamic behavior, and signal characteristics
