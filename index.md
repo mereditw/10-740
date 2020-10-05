@@ -20,7 +20,46 @@ Describe what you plan to do in the next two weeks
 ### Phenomena of Interest
 Describe the physical phenomena of interest, e.g. physical principles, static and dynamic behavior, and signal characteristics
 ### Sensor(s) Used
-Describe the sensor(s) you used, e.g. physical principles, static and dynamic behavior, and signal characteristics
+#### Water Level Sensor
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/61cPAXzZ0EL._AC_SX466_.jpg" width="250">
+
+Figure 1: Water Level Sensor (source:https://images-na.ssl-images-amazon.com/images/I/61cPAXzZ0EL._AC_SX466_.jpg)
+
+##### Physical Principles
+The water level sensor is able to detect the height of the water level through changing its resistivity. The sensor is built with 5 power and 5 sensing traces which are connected to each other when submerged in water. The resistance of the sensor is inversely proportional to the height of the water, thus the voltage output by the sensor is proportional to the height of the water.
+##### Sensor Parameters
+This sensor has three pins, an analog voltage output that will be connected to an ADC channel, a VCC pin for power, and a ground connection. The following are parameters of the water level sensor as obtained from the sensor data sheet.
+  - Operating voltage between 3.3V – 5V
+  - Operating current: <20 mA
+  - Water level sensing range: 40mm
+  -	Output voltage signal range: 0 – 4.2V
+
+Further testing is needed to confirm the full range of the output voltage signal range by measuring the voltage at the maximum water level height.
+
+##### Static and Dynamic Behavior
+This water level sensor is measuring a relatively static phenomena, and it is uncertain how dynamic physical phenomena such as waves and ripples will be detected and identified as a voltage change.
+
+#### Temperature and Humidity Sensor DHT11
+
+<img src="https://images-na.ssl-images-amazon.com/images/I/61MKNxCnIwL._SL1280_.jpg" width="250">
+
+Figure 2: Temperature and Humidity Sensor (source:https://images-na.ssl-images-amazon.com/images/I/61MKNxCnIwL._SL1280_.jpg)
+
+##### Physical Principles
+Temperature is sensed through semiconductive material thermistor component of the sensor, which changes its resistivity based on the temperature. The resistivity decreases exponentially with an increase in temperature. Additionally, humidity is sensed through two electrodes containing a moisture capturing substrate between them. The substrate decreases the electrodes’ resistivity with an increase in humidity. 
+##### Sensor Parameters
+The DHT11 sensor has three pins, a digital output data pin, a VCC pin for power, and a ground connection. a
+  -	Operating voltage between 3.3V – 5V
+  -	Operating current: 0.3 mA
+  -	Output resolution: 16Bit digital output for both temperature and humidity
+  -	Temperature range: 0°C - 50°C
+  -	Humidity range: 20% - 90% Relative Humidity
+  - Accuracy: ± 1°C, ±1% RH
+  -	Sampling Rate: 1 Hz
+##### Static and Dynamic Behavior
+The temperature and humidity are relatively static phenomena, and the DHT11 sensor is limited to 1 measurement a second, making it appropriate for this application. 
+
 ### Signal Conditioning and Processing
 Describe the signal conditioning and processing procedures
 ### Experiments and Results
