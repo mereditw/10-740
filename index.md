@@ -1,7 +1,7 @@
 ## Introduction
 
 ### Summary
-Our project is to create a connected system of storm drain sensors that will detect changes in water level in order to provide real time flood updates at a more granular level.  In addition to the water level changes we will also include temperature and humidity sensors to provide more context for the water level rise and potentially increase fidelity of the readings
+Our project is to create a connected system of storm drain sensors that will detect changes in water level in order to provide real time flood updates at a more granular level.  In addition to the water level changes we will also include temperature and humidity sensors to provide more context for the water level rise and potentially increase fidelity of the readings.
 
 ### Motivation
 As flooding becomes a larger problem due to climate change areas that are not usually flooded are now becoming susceptible to flash flooding.  Currently notification systems work at a high level and are not in real time.  With these sensors we can quickly and accurately provide real time information for flood risks at a granular level.
@@ -10,22 +10,35 @@ By the end of the project we are hoping to acheive the following:
   1. Create a working model for our storm drain sensor that accurately detects changing levels of water and gives off an alert
   2. Connect our sensors to create a system of detection
   
- 
-For Progress Report
 ## Current Progress
-Sp far we have began building out the circuits for our sensor and writing the code for our sensors in order for them to work individually
+
+Currently, our experiment is being conducted remotely with one storm drain setup for each of the two members of our team. So far we have began building out the circuits for our sensor and writing the code for our sensors in order for them to work individually. One circuit setup is as follows, where the water level sensor and the temperature and humidity sensor are connected to the Raspberry Pi. We have gotten both sensors to successfully collect data and will soon implement IOT capabilities by publishing to OpenChirp.
+
+<img src="https://i.gyazo.com/4401253eb3fafcbbb1ed63f1fe160c8b.jpg" alt="Image from Gyazo" width="450"/></a>
+
 ### Highlights: In particular, articulate thing(s) you have learned / solved outside of what was taught in class
 ### Problems Encountered
-
+We are still working on converting the voltage reading from the water level sensor to a water height, because the voltage doesn’t seem to scale linearly with the height of the water as water was added to the container.
 ## Future Plan
 In the next two weeks we will complete the following:
   - Create a methodology for testing our sensor under varying conditions to finalize and adjustments that need to be made to ensure a proper system
   - utilize that methodology to create and test a working system
   - connect our sensors to simulate our usecase
+  - once the water level sensor’s sampling behavior is more thoroughly tested in settings with waves/ripples, obtain a rate of flow from the change in water height and size of the tank
   - continue to update the github page as progress continues
+  
 ## Methodology
 ### Phenomena of Interest
-Describe the physical phenomena of interest, e.g. physical principles, static and dynamic behavior, and signal characteristics
+#### Water Level
+We are interested in measuring the change in water level in a tank and subsequently the flow rate into a container. Given a rectangular tank of length L, width w, height h, and no flow rate out, we can obtain the rate of flow of water into the container through the mass balance equation:
+
+<img src="https://render.githubusercontent.com/render/math?math={\rho(Q_{in} - Q_{out} )} = \rho\frac{dV}{dt}    \longrightarrow">    <img src="https://render.githubusercontent.com/render/math?math={Q_{in}} = L*w*\frac{dh}{dt}">
+
+Knowing the water level and the change in water level over time will allow for sensing when the tank is too full and for further actuating functions, such as turning on a light or raising an alarm. Furthermore, knowing the flow rate into the tank is a useful metric that considers the volume of the tank and not just the height, thus allowing us to understand how fast water is flowing into the tank. Knowing the rate of flow in is useful for communicating with other water level sensors in the network as not all tanks may be of the same volume.
+
+#### Temperature and Humidity
+Temperature and relative humidity are useful measures for indicating the occurrence of a storm. Moisture in the air and rapidly rising warm air are common conditions before a thunderstorm, which can be damaging to society and infrastructure through lightning and flooding. Sensing the relative humidity and ambient temperature can be informative for a stormwater system to prepare for an incoming storm through identifying data outside a normal range of conditions.
+
 ### Sensor(s) Used
 #### Water Level Sensor
 
