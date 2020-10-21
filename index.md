@@ -83,9 +83,20 @@ The temperature and humidity are relatively static phenomena, and the DHT11 sens
 ### Signal Conditioning and Processing
 Describe the signal conditioning and processing procedures
 ### Experiments and Results
-Describe the experiments you did and present the results; Use tables and plots if possible
+
+In order to test the water level sensor and ensure it was accurately measuring the current level we ran seperate tests to calibrate our sensors.  We found that the sensor does not behave linearly to rising water and begins to act logarithmically as the water reached its highest levels.  Below we have the trasfer functions we used for each of our sensors:
+
+INSERT TRANSFER FUNCTIONS
+
+After we had calibrated our sensors we began to look at how we would sample the data and convert it into a change in water level.  When conducting out experiments we noticed that the sensor took time to settle down and get an accurate measurement due to ripples in the water.  This led us to use a moving average of the data in order to eleiminate the potential problems caused from these effects.  
+
+Once we had settled on the moving average we began to decide on a threshold to trigger an alert that flooding was possible.  Using the containers we had we calibrated a threshold change in flow rate that would trigger the alarm and alert the nearby sensors that flooding would be occuring.
+
+Finally we implemented openchirp to allow for the system of sensors to communicate with eachother and enable a network of sensors that would have information about surrounding areas and potential flooding effects.
+
 ### Discussion
-Discuss the insights from the project
+
+From this project we were able to implement everything we learned throughout the course and make something that has a practical use case.  From knowing very little about sensors and signal processing to being able to create a system of sensors that communicate with eachother.  From our results it is clear that an inexpensive and distributed system could be implemented in storm drains to increase awareness of potential flooding in real time.  In addition to this being able to create a network of these sensors can allow for emergnecy personal to easily navigate around flooded areas in case of emergencies.  In the future and going forward it would be beneficial to look at adding additional sensors to detecting the rising water level and possible alternative means for measuring flow rate that does not require calibration of each sensor.  
 
 
 
