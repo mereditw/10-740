@@ -94,6 +94,14 @@ Once we had settled on the moving average we began to decide on a threshold to t
 
 Finally we implemented openchirp to allow for the system of sensors to communicate with eachother and enable a network of sensors that would have information about surrounding areas and potential flooding effects.
 
+Steps of final experiment:
+
+1. Both sensors were turned on and published the current water level to openchirp.
+2. Once water level was published sensor takes measurements every 0.5 seconds over a 2.5 second time period and averages the flow rate. If current flow rate is safe and turns on a green LED if safe and a red LED if unsafe.  
+3.  Once this is determined the data is published to Openchirp and the sensor pulls the information from other sensors to process.
+4. Once the sensor receives the information from the other sensors it compares this to the threshold for that sensor container and turns on a yellow LED if the flow rate is unsafe nad a blue LED if it is safe.
+5.  This process repeats
+
 ### Discussion
 
 From this project we were able to implement everything we learned throughout the course and make something that has a practical use case.  From knowing very little about sensors and signal processing to being able to create a system of sensors that communicate with eachother.  From our results it is clear that an inexpensive and distributed system could be implemented in storm drains to increase awareness of potential flooding in real time.  In addition to this being able to create a network of these sensors can allow for emergnecy personal to easily navigate around flooded areas in case of emergencies.  In the future and going forward it would be beneficial to look at adding additional sensors to detecting the rising water level and possible alternative means for measuring flow rate that does not require calibration of each sensor.  
